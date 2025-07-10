@@ -1,4 +1,4 @@
 # AdventureBoard
 WPF Sound Board App for my D&amp;D games!
 
-Sound processed with NAudio package for WinForms
+Audio processing and playback with [NAudio](https://github.com/naudio/NAudio/tree/master?tab=readme-ov-file) package for WinForms.
