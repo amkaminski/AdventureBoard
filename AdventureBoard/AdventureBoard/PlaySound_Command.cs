@@ -33,7 +33,7 @@ namespace AdventureBoard
 
         public void Execute(object parameter)
         {
-            // TODO: implement try/catch
+            // TODO: implement try/catch here?
             Console.WriteLine("\n - Command Execute hit\n");
             viewModel.playSound();
         }
