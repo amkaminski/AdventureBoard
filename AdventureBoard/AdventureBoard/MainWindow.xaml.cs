@@ -20,9 +20,24 @@ namespace AdventureBoard
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        public ViewModel ViewModel { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
+
+            ViewModel = new ViewModel();
+        }
+
+        private void initialize()
+        {
+            Closed += new EventHandler(AppExit_Event);
+        }
+
+        private void AppExit_Event(object sender, EventArgs e)
+        {
+            ViewModel.cleanUp();
         }
     }
 }

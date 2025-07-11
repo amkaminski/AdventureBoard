@@ -7,7 +7,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Button Width="110" Height="110" Content="Wombo" Foreground="LightGoldenrodYellow" >
+        <Button Width="110" Height="110" Content="Wombo" Foreground="LightGoldenrodYellow"
+                Command="{Binding PlaySound_Command}">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}"

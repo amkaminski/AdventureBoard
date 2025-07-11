@@ -19,7 +19,10 @@ namespace AdventureBoard
         private readonly IWavePlayer outputDevice;
         private readonly MixingSampleProvider mixer;
 
+        // Start with just the one sound effect
         private string soundPath = "C:/Users/am_ka/Desktop/Messy Work Bench/Practice/sounds/arrow-woosh.wav";
+
+        private CachedSound woosh;
 
         // Constructor
         public AudioEngine(int sampleRate = 44100, int channelCount = 2)
@@ -35,13 +38,21 @@ namespace AdventureBoard
             // feeding the output model sounds via the mixer
             outputDevice.Init(mixer);
             outputDevice.Play(); // start buffer
+
+            woosh = new CachedSound(soundPath); // One cached sound for testing
         }        
         
     
+        /// <summary>
+        /// TODO: refactor to play focused sound, plays only one sound
+        /// at this time
+        /// </summary>
         public void playSound()
         {
-            var input = new AudioFileReader(soundPath);
-            addMixerInput(new AutoDisposeFileReader(input));
+            /*var input = new AudioFileReader(soundPath);
+            addMixerInput(new AutoDisposeFileReader(input));*/
+
+            PlaySound(woosh); // Restrict to playing one sound for initial tests
         }
 
         private ISampleProvider ConvertToRightChannelCount(ISampleProvider input)
